@@ -6,7 +6,7 @@
 #    By: prastoin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/09 15:53:54 by prastoin          #+#    #+#              #
-#    Updated: 2018/11/12 16:47:46 by prastoin         ###   ########.fr        #
+#    Updated: 2018/11/14 15:11:20 by prastoin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,12 @@ PT_C = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c\
 	   ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c \
 	   ft_strnstr.c ft_strrev.c ft_strsplit.c ft_strstr.c ft_strsub.c \
 	   ft_strtrim.c ft_tolower.c ft_toupper.c ft_strchr.c ft_strlcat.c \
-	   ft_strmap.c ft_strmapi.c ft_strrchr.c
+	   ft_strmap.c ft_strmapi.c ft_strrchr.c ft_lstadd.c ft_lstdel.c \
+	   ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c \
+	   ft_iterative_factorial.c ft_sqrt.c ft_strcapitalize.c \
+	   ft_str_is_uppercase.c ft_str_is_alpha.c ft_str_is_lowercase.c \
+	   ft_str_is_numeric.c
+
 
 PT_O = $(PT_C:.c=.o)
 

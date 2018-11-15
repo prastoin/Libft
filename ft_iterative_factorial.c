@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 09:57:42 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/14 15:36:48 by prastoin         ###   ########.fr       */
+/*   Created: 2018/11/06 11:45:11 by prastoin          #+#    #+#             */
+/*   Updated: 2018/11/14 13:40:25 by prastoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+int		ft_iterative_factorial(int nb)
 {
-	int		i;
+	int i;
+	int res;
 
-	i = 0;
-	if (!(s && f))
-		return ;
-	while (s[i])
+	res = nb;
+	i = 2;
+	if (nb < 0)
+		return (0);
+	if (nb == 0 || nb == 1)
+		return (1);
+	while (i != nb)
 	{
-		f(i, &s[i]);
+		res = res * i;
 		i++;
 	}
+	return (res);
 }

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 09:57:42 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/14 15:36:48 by prastoin         ###   ########.fr       */
+/*   Created: 2018/08/08 16:04:18 by prastoin          #+#    #+#             */
+/*   Updated: 2018/08/08 21:15:36 by prastoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+int		ft_str_is_alpha(char *str)
 {
-	int		i;
+	int i;
 
 	i = 0;
-	if (!(s && f))
-		return ;
-	while (s[i])
+	while ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
 	{
-		f(i, &s[i]);
 		i++;
 	}
+	if (str[i] == '\0')
+		return (1);
+	return (0);
 }
