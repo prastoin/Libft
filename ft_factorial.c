@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_factorial.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amerrouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 14:42:32 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/30 14:11:07 by prastoin         ###   ########.fr       */
+/*   Created: 2018/11/14 14:51:19 by amerrouc          #+#    #+#             */
+/*   Updated: 2018/11/14 15:25:14 by amerrouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t		ft_strlen(const char *s)
+int	ft_factorial(int nb)
 {
-	size_t i;
+	int fact;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (nb == 0)
+		return (1);
+	if ((nb < 0) || (nb > 12))
+		return (0);
+	fact = nb * ft_factorial(nb - 1);
+	return (fact);
 }

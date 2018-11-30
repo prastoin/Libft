@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amerrouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 14:42:32 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/30 14:11:07 by prastoin         ###   ########.fr       */
+/*   Created: 2018/11/14 14:50:48 by amerrouc          #+#    #+#             */
+/*   Updated: 2018/11/14 15:25:27 by amerrouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t		ft_strlen(const char *s)
+int	ft_power(int nb, int power)
 {
-	size_t i;
+	int	nb_pwr;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	nb_pwr = nb;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	if (power == 1)
+		return (nb_pwr);
+	nb_pwr = nb * ft_power(nb, power - 1);
+	return (nb_pwr);
 }

@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 16:23:09 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/16 11:23:40 by prastoin         ###   ########.fr       */
+/*   Created: 2018/11/19 13:22:56 by prastoin          #+#    #+#             */
+/*   Updated: 2018/11/30 14:47:33 by prastoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+char	*ft_strndup(const char *s1, size_t n)
 {
-	t_list	*tmp;
-	t_list	*first;
-	t_list	*cour;
+	char	*dst;
+	size_t	i;
 
-	if (!(lst))
+	i = 0;
+	if (!(dst = (char *)malloc(sizeof(char) * (n + 1))))
 		return (NULL);
-	tmp = f(lst);
-	if ((cour = ft_lstnew(tmp->content, tmp->content_size)) == NULL)
-		return (NULL);
-	first = cour;
-	lst = lst->next;
-	while (lst)
+	while (s1[i] && i < n)
 	{
-		tmp = f(lst);
-		if ((cour->next = ft_lstnew(tmp->content, tmp->content_size)) == NULL)
-			return (NULL);
-		cour = cour->next;
-		lst = lst->next;
+		dst[i] = s1[i];
+		i++;
 	}
-	return (first);
+	dst[i] = '\0';
+	return (dst);
 }

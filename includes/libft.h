@@ -6,7 +6,7 @@
 /*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:48:43 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/28 13:53:09 by amerrouc         ###   ########.fr       */
+/*   Updated: 2018/11/30 14:48:40 by prastoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <sys/uio.h>
 # include <limits.h>
 
+char			*ft_strndup(const char *s1, size_t n);
 int				ft_isupper(int c);
 int				get_next_line(const int fd, char **line);
 
