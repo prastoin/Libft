@@ -1,30 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_freedb.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 13:22:56 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/30 14:47:33 by prastoin         ###   ########.fr       */
+/*   Created: 2019/01/09 14:01:40 by prastoin          #+#    #+#             */
+/*   Updated: 2019/01/09 15:50:46 by prastoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *s1, size_t n)
+void	ft_freedbint(int **tab, int y)
 {
-	char	*dst;
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if (!(dst = (char *)malloc(sizeof(char) * (n + 1))))
-		return (NULL);
-	while (s1[i] && i < n)
+	if (tab == NULL)
+		return ;
+	while (i < y)
 	{
-		dst[i] = s1[i];
+		if (tab[i])
+			free(tab[i]);
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	free(tab);
+	tab = NULL;
+}
+
+void	ft_freedbchar(char **tab)
+{
+	int		i;
+
+	i = 0;
+	if (tab == NULL)
+		return ;
+	while (tab[i] != NULL)
+	{
+		if (tab[i])
+			free(tab[i]);
+		i++;
+	}
+	free(tab);
+	tab = NULL;
 }

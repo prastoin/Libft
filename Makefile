@@ -6,14 +6,13 @@
 #    By: amerrouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 15:59:18 by amerrouc          #+#    #+#              #
-#    Updated: 2018/11/30 14:49:31 by prastoin         ###   ########.fr        #
+#    Updated: 2019/01/09 14:06:13 by prastoin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 SRC = ft_strlen.c	\
-	  ft_strndup.c	\
 	  ft_strdup.c	\
 	  ft_strcpy.c	\
 	  ft_strncpy.c	\
@@ -82,9 +81,8 @@ SRC = ft_strlen.c	\
 	  ft_strcapitalize.c	\
 	  ft_power.c	\
 	  ft_factorial.c	\
-	  ft_is_prime.c
-
-INC = -I./includes/
+	  ft_is_prime.c		\
+	  ft_freedb.c
 
 OBJ = $(SRC:.c=.o)
 
