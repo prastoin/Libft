@@ -6,13 +6,15 @@
 #    By: amerrouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 15:59:18 by amerrouc          #+#    #+#              #
-#    Updated: 2019/01/09 14:06:13 by prastoin         ###   ########.fr        #
+#    Updated: 2019/01/14 11:02:43 by prastoin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = ft_strlen.c	\
+SRC = ft_sort_params.c	\
+	  ft_count_lines.c	\
+	  ft_strlen.c	\
 	  ft_strdup.c	\
 	  ft_strcpy.c	\
 	  ft_strncpy.c	\

@@ -6,7 +6,7 @@
 /*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:48:43 by prastoin          #+#    #+#             */
-/*   Updated: 2019/01/09 14:06:37 by prastoin         ###   ########.fr       */
+/*   Updated: 2019/01/14 11:36:06 by prastoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <sys/uio.h>
 # include <limits.h>
 
+int				ft_count_lines(char **tab);
+char			**ft_sort_params(char **argv, int k);
 int				ft_isupper(int c);
 int				get_next_line(const int fd, char **line);
 
