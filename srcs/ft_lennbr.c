@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lennbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 15:14:11 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/13 10:46:36 by prastoin         ###   ########.fr       */
+/*   Created: 2019/01/16 16:01:13 by prastoin          #+#    #+#             */
+/*   Updated: 2019/02/01 16:09:15 by prastoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int		ft_lennbr(long long nb)
 {
-	long res;
-	long neg;
-	long i;
+	int		i;
 
 	i = 0;
-	neg = 1;
-	res = 0;
-	while (str[i] == ' ' || (str[i] >= '\a' && str[i] <= '\r'))
-		i++;
-	if (str[i] == '-')
-		neg = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
 	{
-		res = res * 10 + (str[i] - '0');
+		i = 1;
+		nb = -nb;
+	}
+	while (nb > 0)
+	{
+		nb /= 10;
 		i++;
 	}
-	return ((int)(res * neg));
+	return (i);
 }

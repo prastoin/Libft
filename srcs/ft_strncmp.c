@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 09:04:25 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/12 16:51:02 by prastoin         ###   ########.fr       */
+/*   Created: 2018/11/07 16:41:03 by prastoin          #+#    #+#             */
+/*   Updated: 2019/01/23 15:14:45 by prastoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char		*str;
-	size_t		i;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
-		return (NULL);
-	while (i < size)
+	if (n == 0)
+		return (0);
+	while (i < n)
 	{
-		str[i] = '\0';
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		if (str1[i] == '\0' && str2[i] == '\0')
+			return (0);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (0);
 }

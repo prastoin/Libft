@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 16:41:03 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/13 09:39:51 by prastoin         ###   ########.fr       */
+/*   Created: 2018/11/08 16:08:53 by prastoin          #+#    #+#             */
+/*   Updated: 2019/02/08 17:56:40 by prastoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	char		*fresh;
+	size_t		i;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n)
+	if (!(s))
+		return (NULL);
+	if (s[0] == '\0')
+		return (NULL);
+	if (!(fresh = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	while (i < len)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		if (str1[i] == '\0' && str2[i] == '\0')
-			return (0);
+		fresh[i] = ((char *)s)[start + i];
 		i++;
 	}
-	return (0);
+	fresh[len] = '\0';
+	return (fresh);
 }

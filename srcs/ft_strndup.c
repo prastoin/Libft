@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prastoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 16:08:53 by prastoin          #+#    #+#             */
-/*   Updated: 2018/11/13 09:10:23 by prastoin         ###   ########.fr       */
+/*   Created: 2018/11/07 15:53:49 by prastoin          #+#    #+#             */
+/*   Updated: 2019/02/09 04:13:39 by prastoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	char		*fresh;
-	size_t		i;
+	char	*dst;
+	size_t	i;
 
 	i = 0;
-	if (!(s))
+	if (!(dst = (char*)malloc(sizeof(char) * (n + 1))))
 		return (NULL);
-	if (s[0] == '\0')
-		return (NULL);
-	if (!(fresh = (char *)malloc(sizeof(char) * len + 1)))
-		return (NULL);
-	while (i < len)
+	while (s1[i] && i < n)
 	{
-		fresh[i] = ((char *)s)[start + i];
+		dst[i] = s1[i];
 		i++;
 	}
-	fresh[len] = '\0';
-	return (fresh);
+	dst[i] = '\0';
+	return (dst);
 }
